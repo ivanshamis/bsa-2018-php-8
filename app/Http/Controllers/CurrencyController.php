@@ -27,7 +27,7 @@ class CurrencyController extends Controller
         ]);
     }
 
-    public function create()
+    public function add()
     {
         return view('new-currency', [ 'currencies' => $this->currencies]);
     }

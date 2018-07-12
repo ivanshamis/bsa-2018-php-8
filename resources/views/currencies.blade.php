@@ -4,21 +4,13 @@
 
 @section('content')
     @component('header')
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-        <div class="collapse navbar-collapse">
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('currencies.index') }}">Currency market</a>
-                    </li>
-                    @each('nav-item', $currencies, 'currency')
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('currencies.create') }}">Add</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{{ route('currencies.index') }}">Currencies</a>
+    </div>
+    <div class="navbar-nav">
+        @each('nav-item', $currencies, 'currency')
+        <a class="nav-item nav-link active" href="{{ route('currencies.add') }}">Add</a>
+    </div>
     @endcomponent
 
     @component('content-wrapper')
@@ -33,6 +25,7 @@
                     @each('list-item', $currencies, 'currency')
                 </ul>
             @endif
-            @show
+        @show
     @endcomponent
+
 @endsection

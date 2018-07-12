@@ -1,5 +1,5 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-    <div class="collapse navbar-collapse">
-        {{ $slot }}
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    {{ $slot }}
+  </div>
 </nav>
