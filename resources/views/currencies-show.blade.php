@@ -1,4 +1,4 @@
-@extends('currencies')
+@extends('currencies-index')
 
 @section('title'){{ $currency->title }}@endsection
 

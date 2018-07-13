@@ -16,13 +16,13 @@ class CurrencyController extends Controller
 
     public function index()
     {
-        return view('currencies', ['currencies' => $this->currencies]);
+        return view('currencies-index', ['currencies' => $this->currencies]);
     }
 
     public function show(int $id)
     {
         $currency = Currency::find($id);
-        return view('currency', [
+        return view('currencies-show', [
             'currencies' => $this->currencies,
             'currency' => $currency
         ]);
@@ -30,13 +30,13 @@ class CurrencyController extends Controller
 
     public function add()
     {
-        return view('currency-add', [ 'currencies' => $this->currencies]);
+        return view('currencies-add', [ 'currencies' => $this->currencies]);
     }
 
     public function edit(int $id)
     {
         $currency = Currency::find($id);
-        return view('currency-edit', [
+        return view('currencies-edit', [
             'currencies' => $this->currencies,
             'currency' => $currency
         ]);

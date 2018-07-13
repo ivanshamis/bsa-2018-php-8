@@ -1,4 +1,4 @@
-@extends('currencies')
+@extends('currencies-index')
 
 @section('title', 'Add new currency')
 
@@ -7,7 +7,7 @@
 @section('content')
     <div class="media-body">
     <form method="POST" action="{{ route('currencies.store') }}">
-        @include('currency-form');        
+        @include('parts/currency-form');        
     </form>
     </div>
 @endsection
