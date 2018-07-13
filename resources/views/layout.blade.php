@@ -12,8 +12,8 @@
     <title>@yield('title')</title>
 
     <link rel="stylesheet" 
-          href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css"
-          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" 
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" 
           crossorigin="anonymous">
 
     <style>
@@ -28,7 +28,12 @@
 </head>
 <body>
     <div class="container">
-        @yield('content')
+        <div class="row">
+            <div class="col-md-12 main">
+                <h1>@yield('content-title')</h1>
+                @yield('content')
+            </div>
+        </div>
     </div>
 </body>
 </html>

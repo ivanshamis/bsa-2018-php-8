@@ -29,13 +29,13 @@ class CurrencyController extends Controller
 
     public function add()
     {
-        return view('new-currency', [ 'currencies' => $this->currencies]);
+        return view('currency-add', [ 'currencies' => $this->currencies]);
     }
 
     public function edit(int $id)
     {
         $currency = Currency::find($id);
-        return view('currency', [
+        return view('currency-edit', [
             'currencies' => $this->currencies,
             'currency' => $currency
         ]);
@@ -45,5 +45,19 @@ class CurrencyController extends Controller
     {
         Currency::destroy($id);
         return redirect()->route('currencies.index');
+    }
+
+    public function store(Request $request)
+    {   
+        $currency = Currency::create($request->all());
+        return redirect()->route('currencies.show',['id' => $currency->id]);
+    }
+
+    public function update(int $id, Request $request)
+    {   
+        $currency = Currency::find($id);
+        $currency->fill($request->all());
+        $currency->save();
+        return redirect()->route('currencies.show',['id' => $currency->id]);
     }
 }
