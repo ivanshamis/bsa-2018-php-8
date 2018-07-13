@@ -7,7 +7,7 @@
 @section('content')
     <div class="media-body">
     <form method="POST" action="{{ route('currencies.store') }}">
-        @include('parts/currency-form');        
+        @include('parts/currency-form')       
     </form>
     </div>
 @endsection

@@ -10,9 +10,5 @@
          {{ $currency['short_name'] }}
          ${{ $currency['price'] }}
          <br>
-         <button onclick="location.href='{{ route('currencies.edit', 
-             ['id' => $currency['id']]) }}'" type="button" class=".edit-button">Edit</button>
-         <button onclick="location.href='{{ route('currencies.delete', 
-             ['id' => $currency['id']]) }}'" type="button" class=".delete-button">Delete</button>
-        </div>
+         @include('parts/edit-buttons')
 @endsection

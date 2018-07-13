@@ -30,10 +30,4 @@ class CurrencyRequest extends FormRequest
             'logo_url'    =>  'required|url'
         ];
     }
-
-    public function messages() {
-        return [
-            'logo_url.url' => 'Are you sure this is a link?'
-        ];
-    }
 }
