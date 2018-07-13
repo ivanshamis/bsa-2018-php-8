@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Currency;
+use App\Http\Requests\CurrencyRequest;
 
 class CurrencyController extends Controller
 {
@@ -47,13 +48,13 @@ class CurrencyController extends Controller
         return redirect()->route('currencies.index');
     }
 
-    public function store(Request $request)
+    public function store(CurrencyRequest $request)
     {   
         $currency = Currency::create($request->all());
-        return redirect()->route('currencies.show',['id' => $currency->id]);
+        return redirect()->route('currencies.index');
     }
 
-    public function update(int $id, Request $request)
+    public function update(int $id, CurrencyRequest $request)
     {   
         $currency = Currency::find($id);
         $currency->fill($request->all());
