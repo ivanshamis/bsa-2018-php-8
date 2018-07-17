@@ -1,4 +1,13 @@
-        <button class="edit-button" onclick="location.href='{{ route('currencies.edit', 
-            ['id' => $currency['id']]) }}'" type="button">Edit</button>
-        <button class="delete-button" onclick="location.href='{{ route('currencies.delete', 
-            ['id' => $currency['id']]) }}'" type="button">Delete</button>
+<div class="form-group">
+    <a class="edit-button btn btn-primary"
+    href="{{ route('currencies.edit', ['id' => $currency['id']]) }}">Edit<a/>
+</div>
+
+<div class="form-group">
+    {!! Form::open([
+        'route' => ['currencies.destroy', $currency['id']],
+        'method' => 'DELETE'
+    ]) !!}
+    <button type="submit" class="delete-button btn btn-primary">Delete</button>
+    {!! Form::close() !!}
+</div>

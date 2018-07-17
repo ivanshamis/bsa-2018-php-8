@@ -9,7 +9,7 @@
      </div>
      <div class="navbar-nav">
          @each('parts/nav-item', $currencies, 'currency')
-         <a class="nav-item nav-link active" href="{{ route('currencies.add') }}">Add</a>
+         <a class="nav-item nav-link active" href="{{ route('currencies.create') }}">Add</a>
      </div>
     @endcomponent
 @endsection
