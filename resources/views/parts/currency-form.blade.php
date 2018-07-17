@@ -1,4 +1,3 @@
-        {{ csrf_field() }}
         <div class="form-group">
             <label for="title">Currency title</label>
             <input type="text" class="form-control" name="title" placeholder="Enter currency title" 
